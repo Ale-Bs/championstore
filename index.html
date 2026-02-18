@@ -27,7 +27,7 @@ content:"";
 position:fixed;
 width:100%;
 height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+background:linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
 z-index:-1;
 }
 
@@ -37,18 +37,12 @@ from{opacity:0;}
 to{opacity:1;}
 }
 
-@keyframes slideDown{
-from{transform: translateY(-40px); opacity:0;}
-to{transform: translateY(0); opacity:1;}
-}
-
 @keyframes fadeUp{
 to{opacity:1; transform: translateY(0);}
 }
 
 header{
 padding:40px 20px;
-animation: slideDown 1s ease-out;
 }
 
 h1{
@@ -61,7 +55,7 @@ opacity:0.8;
 margin-top:5px;
 }
 
-/* GRID */
+/* GRID 2x2 SIEMPRE */
 .grid{
 display:grid;
 grid-template-columns: repeat(2,1fr);
@@ -74,32 +68,39 @@ padding:20px;
 /* TARJETAS */
 .card{
 background:rgba(255,255,255,0.08);
-border-radius:15px;
-padding:20px;
+backdrop-filter: blur(10px);
+border-radius:20px;
+padding:25px 15px;
 text-decoration:none;
 color:white;
-transition:0.3s;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-height:200px;
+height:190px;
+transition:0.3s;
 
 opacity:0;
 transform: translateY(30px);
 animation: fadeUp 0.8s ease-out forwards;
 }
 
-.card:nth-child(1){ animation-delay:0.3s; }
-.card:nth-child(2){ animation-delay:0.5s; }
-.card:nth-child(3){ animation-delay:0.7s; }
-.card:nth-child(4){ animation-delay:0.9s; }
+.card:nth-child(1){ animation-delay:0.2s; }
+.card:nth-child(2){ animation-delay:0.4s; }
+.card:nth-child(3){ animation-delay:0.6s; }
+.card:nth-child(4){ animation-delay:0.8s; }
 
 .card img{
-width:100px;
-height:100px;
+width:90px;
+height:90px;
 object-fit:contain;
-margin-bottom:10px;
+margin-bottom:15px;
+border-radius:12px;
+}
+
+.card span{
+font-size:18px;
+font-weight:500;
 }
 
 .card:hover{
@@ -116,7 +117,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:22px;
-border-radius:12px;
+border-radius:15px;
 text-decoration:none;
 color:white;
 font-weight:bold;
@@ -124,11 +125,12 @@ box-shadow:0 0 20px rgba(255,140,0,0.8);
 transition:0.3s;
 
 opacity:0;
-animation: fadeUp 0.8s ease-out 1.1s forwards;
+animation: fadeUp 0.8s ease-out 1s forwards;
 }
 
 .torneo:hover{
 transform:scale(1.05);
+box-shadow:0 0 30px rgba(255,140,0,1);
 }
 
 footer{
@@ -136,15 +138,6 @@ margin-top:50px;
 padding:20px;
 opacity:0.7;
 font-size:14px;
-}
-
-@media(max-width:700px){
-.grid{
-grid-template-columns:1fr;
-}
-.torneo{
-grid-column:span 1;
-}
 }
 </style>
 </head>
@@ -159,22 +152,22 @@ grid-column:span 1;
 <section class="grid">
 
 <a href="#" class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/en/c/c5/Logo_of_Garena_Free_Fire.png" alt="Free Fire">
+  <img src="https://i.imgur.com/HgNCDOt.jpeg">
   <span>Free Fire</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mobile_Legends_Logo.png" alt="Mobile Legends">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mobile_Legends_Logo.png">
   <span>Mobile Legends</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Minecraft_logo.svg" alt="Minecraft">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Minecraft_logo.svg">
   <span>Minecraft</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://www.pngitem.com/pimgs/m/388-3886446_blood-strike-png-transparent-png-thumbnail.png" alt="Blood Strike">
+  <img src="https://www.pngitem.com/pimgs/m/388-3886446_blood-strike-png-transparent-png-thumbnail.png">
   <span>Blood Strike</span>
 </a>
 
