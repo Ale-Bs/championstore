@@ -1,21 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChampionStore</title>
 
 <style>
+...todo el código...
+</style>
+
+</head>
+<style>
+
 body{
 margin:0;
 font-family: Arial, sans-serif;
 background: linear-gradient(to bottom, #0f1c2e, #1c2b45);
 color:white;
 text-align:center;
+animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+from {opacity:0;}
+to {opacity:1;}
 }
 
 header{
 padding:40px 20px;
+animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+from {transform: translateY(-30px); opacity:0;}
+to {transform: translateY(0); opacity:1;}
 }
 
 h1{
@@ -42,54 +58,34 @@ font-size:18px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-transition:0.3s;
+transition: all 0.3s ease;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .btn:hover{
 transform:scale(1.05);
+box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 
 .freefire{ background:#e53935; }
 .mlbb{ background:#1e88e5; }
 .minecraft{ background:#43a047; }
 .blood{ background:#6a1b9a; }
-.torneo{ background:linear-gradient(45deg,#ffb300,#ff6f00); }
+
+.torneo{
+background: linear-gradient(45deg,#ffb300,#ff6f00);
+box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+}
+
+.torneo:hover{
+box-shadow: 0 0 25px rgba(255, 200, 0, 1);
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+font-size:14px;
+opacity:0.7;
+}
 
 </style>
-</head>
-
-<body>
-
-<header>
-<h1>ChampionStore</h1>
-<p>Compite. Gana. Domina.</p>
-</header>
-
-<section>
-
-<h2>🎮 Recargas Disponibles</h2>
-
-<a href="#" target="_blank" class="btn freefire">
-🔥 Recargar Free Fire
-</a>
-
-<a href="#" target="_blank" class="btn mlbb">
-⚔️ Recargar Mobile Legends
-</a>
-
-<a href="#" target="_blank" class="btn minecraft">
-⛏️ Recargar Minecraft
-</a>
-
-<a href="#" target="_blank" class="btn blood">
-🎯 Recargar Blood Strike
-</a>
-
-<a href="#" class="btn torneo">
-🏆 Inscríbete a Torneos
-</a>
-
-</section>
-
-</body>
-</html>
