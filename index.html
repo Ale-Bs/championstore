@@ -6,27 +6,24 @@
 <title>ChampionStore</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, sans-serif;
-}
 
 body{
-background:url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d") no-repeat center center fixed;
-background-size:cover;
+margin:0;
+font-family: Arial, sans-serif;
+background: url("https://images.unsplash.com/photo-1542751371-adc38448a05e") no-repeat center center fixed;
+background-size: cover;
 color:white;
 text-align:center;
 }
 
-/* Oscurecer fondo */
 body::before{
 content:"";
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.65);
 z-index:-1;
 }
 
@@ -35,107 +32,66 @@ padding:40px 20px;
 }
 
 h1{
-font-size:42px;
-letter-spacing:2px;
-}
-
-p{
-opacity:0.8;
-margin-top:5px;
+font-size:40px;
+margin:10px 0;
 }
 
 /* GRID 2x2 */
 .grid{
 display:grid;
-grid-template-columns: repeat(2,1fr);
+grid-template-columns: repeat(2, 1fr);
 gap:20px;
-max-width:900px;
+max-width:800px;
 margin:40px auto;
 padding:20px;
 }
 
-/* TARJETAS */
 .card{
-position:relative;
-height:160px;
+background:rgba(255,255,255,0.08);
 border-radius:15px;
-overflow:hidden;
-display:flex;
-align-items:end;
-justify-content:center;
+padding:20px;
 text-decoration:none;
 color:white;
-font-size:20px;
-font-weight:bold;
 transition:0.3s;
-box-shadow:0 0 15px rgba(255,255,255,0.2);
+backdrop-filter: blur(5px);
 }
 
 .card:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(255,140,0,0.8);
+background:rgba(255,255,255,0.15);
 }
 
-.card span{
-background:rgba(0,0,0,0.6);
-width:100%;
-padding:10px;
+.card img{
+width:80px;
+height:80px;
+margin-bottom:10px;
 }
 
-/* Fondos juegos */
-.freefire{
-background:url("https://pin.it/4NebbnqXH") center/cover;
+.card h3{
+margin:10px 0 0 0;
 }
 
-.mlbb{
-background:url("https://images.unsplash.com/photo-1511512578047-dfb367046420") center/cover;
-}
-
-.minecraft{
-background:url("https://images.unsplash.com/photo-1587574293340-66d6c9c0e4a6") center/cover;
-}
-
-.blood{
-background:url("https://images.unsplash.com/photo-1605902711622-cfb43c4437b5") center/cover;
-}
-
-/* BOTON TORNEO */
 .torneo{
-grid-column:span 2;
+grid-column: span 2;
 background:linear-gradient(45deg,#ffb300,#ff6f00);
-height:70px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-box-shadow:0 0 20px rgba(255,140,0,0.8);
-transition:0.3s;
-}
-
-.torneo:hover{
-transform:scale(1.05);
 }
 
 footer{
 margin-top:50px;
 padding:20px;
-opacity:0.7;
 font-size:14px;
+opacity:0.7;
 }
 
-/* Responsive */
-@media(max-width:700px){
+@media(max-width:600px){
 .grid{
 grid-template-columns:1fr;
 }
 .torneo{
-grid-column:span 1;
+grid-column: span 1;
 }
 }
+
 </style>
 </head>
 
@@ -148,24 +104,28 @@ grid-column:span 1;
 
 <section class="grid">
 
-<a href="#" class="card freefire">
-<span>Free Fire</span>
+<a href="#" class="card">
+<img src="https://seeklogo.com/images/F/free-fire-logo-91B2E7DDBE-seeklogo.com.png">
+<h3>Free Fire</h3>
 </a>
 
-<a href="#" class="card mlbb">
-<span>Mobile Legends</span>
+<a href="#" class="card">
+<img src="https://seeklogo.com/images/M/mobile-legends-logo-4D3D6FAD2C-seeklogo.com.png">
+<h3>Mobile Legends</h3>
 </a>
 
-<a href="#" class="card minecraft">
-<span>Minecraft</span>
+<a href="#" class="card">
+<img src="https://seeklogo.com/images/M/minecraft-logo-5EAD3E3C06-seeklogo.com.png">
+<h3>Minecraft</h3>
 </a>
 
-<a href="#" class="card blood">
-<span>Blood Strike</span>
+<a href="#" class="card">
+<img src="https://seeklogo.com/images/B/blood-strike-logo-CC9E77B8D7-seeklogo.com.png">
+<h3>Blood Strike</h3>
 </a>
 
-<a href="#" class="torneo">
-🏆 Inscríbete a Torneos
+<a href="#" class="card torneo">
+<h3>🏆 Inscríbete a Torneos</h3>
 </a>
 
 </section>
