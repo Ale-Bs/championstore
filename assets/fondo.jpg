@@ -1,4 +1,4 @@
-assets/freefire.jpg
-assets/mlbb.jpg
-assets/minecraft.jpg
-assets/blood.jpg
+body{
+  background:url("https://images.unsplash.com/photo-1542751371-adc38448a05e") no-repeat center center fixed;
+  background-size:cover;
+}
