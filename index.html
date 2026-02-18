@@ -3,136 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChampionStore</title>
+<title>Zona Gamer</title>
 
 <style>
 
+/* ANIMACIÓN GENERAL */
 body{
 margin:0;
-font-family: Arial, sans-serif;
-background: url("https://images.unsplash.com/photo-1542751371-adc38448a05e") no-repeat center center fixed;
-background-size: cover;
-color:white;
-text-align:center;
+padding:0;
+font-family:Arial, sans-serif;
+background-image:url("https://images.alphacoders.com/109/1093919.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+display:flex;
+flex-direction:column;
+align-items:center;
+min-height:100vh;
+animation: fadeInPage 1.2s ease-out;
 }
 
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.65);
-z-index:-1;
+@keyframes fadeInPage{
+from{opacity:0;}
+to{opacity:1;}
 }
 
+/* HEADER */
 header{
-padding:40px 20px;
+color:white;
+font-size:2rem;
+padding:20px;
+animation: slideDown 1s ease-out;
 }
 
-h1{
-font-size:40px;
-margin:10px 0;
+@keyframes slideDown{
+from{
+transform: translateY(-40px);
+opacity:0;
+}
+to{
+transform: translateY(0);
+opacity:1;
+}
 }
 
 /* GRID 2x2 */
-.grid{
+.button-grid{
 display:grid;
-grid-template-columns: repeat(2, 1fr);
-gap:20px;
-max-width:800px;
-margin:40px auto;
+grid-template-columns:repeat(2,170px);
+grid-template-rows:repeat(2,170px);
+gap:25px;
 padding:20px;
 }
 
+/* TARJETAS */
 .card{
-background:rgba(255,255,255,0.08);
-border-radius:15px;
-padding:20px;
-text-decoration:none;
-color:white;
-transition:0.3s;
-backdrop-filter: blur(5px);
+border:none;
+border-radius:18px;
+cursor:pointer;
+background-size:cover;
+background-position:center;
+box-shadow:0 6px 18px rgba(0,0,0,0.4);
+opacity:0;
+transform: translateY(30px);
+animation: fadeUp 0.8s ease-out forwards;
+transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
-background:rgba(255,255,255,0.15);
+transform: scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
-.card img{
-width:80px;
-height:80px;
-margin-bottom:10px;
-}
+.card:nth-child(1){ animation-delay:0.3s; }
+.card:nth-child(2){ animation-delay:0.5s; }
+.card:nth-child(3){ animation-delay:0.7s; }
+.card:nth-child(4){ animation-delay:0.9s; }
 
-.card h3{
-margin:10px 0 0 0;
-}
-
-.torneo{
-grid-column: span 2;
-background:linear-gradient(45deg,#ffb300,#ff6f00);
-}
-
-footer{
-margin-top:50px;
-padding:20px;
-font-size:14px;
-opacity:0.7;
-}
-
-@media(max-width:600px){
-.grid{
-grid-template-columns:1fr;
-}
-.torneo{
-grid-column: span 1;
+@keyframes fadeUp{
+to{
+opacity:1;
+transform: translateY(0);
 }
 }
 
 </style>
 </head>
-
 <body>
 
-<header>
-<h1>ChampionStore</h1>
-<p>Compite. Gana. Domina.</p>
-</header>
+<header>Zona Gamer 🔥</header>
 
-<section class="grid">
+<div class="button-grid">
 
-<a href="#" class="card">
-<img src="https://seeklogo.com/images/F/free-fire-logo-91B2E7DDBE-seeklogo.com.png">
-<h3>Free Fire</h3>
-</a>
+<button class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/5/5e/Free_Fire_Logo.png');"></button>
 
-<a href="#" class="card">
-<img src="https://seeklogo.com/images/M/mobile-legends-logo-4D3D6FAD2C-seeklogo.com.png">
-<h3>Mobile Legends</h3>
-</a>
+<button class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Call_of_Duty_Modern_Warfare_II_Logo.png');"></button>
 
-<a href="#" class="card">
-<img src="https://seeklogo.com/images/M/minecraft-logo-5EAD3E3C06-seeklogo.com.png">
-<h3>Minecraft</h3>
-</a>
+<button class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/3/3e/EA_Sports_FC_24_Logo.png');"></button>
 
-<a href="#" class="card">
-<img src="https://seeklogo.com/images/B/blood-strike-logo-CC9E77B8D7-seeklogo.com.png">
-<h3>Blood Strike</h3>
-</a>
+<button class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/0/0e/FortniteLogo.svg');"></button>
 
-<a href="#" class="card torneo">
-<h3>🏆 Inscríbete a Torneos</h3>
-</a>
-
-</section>
-
-<footer>
-© 2026 ChampionStore | Perú 🇵🇪
-</footer>
+</div>
 
 </body>
 </html>
