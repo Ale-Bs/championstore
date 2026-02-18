@@ -14,33 +14,18 @@ font-family: Arial, sans-serif;
 }
 
 body{
-background:url("https://images.unsplash.com/photo-1511512578047-dfb367046420") no-repeat center center fixed;
-background-size:cover;
+background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420")
+no-repeat center center;
+background-size: cover;
+background-attachment: fixed;
 color:white;
 text-align:center;
-animation: fadeInPage 1.2s ease-out;
 }
 
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
-z-index:-1;
-}
-
-@keyframes fadeInPage{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-@keyframes fadeUp{
-to{opacity:1; transform: translateY(0);}
-}
-
+/* HEADER */
 header{
-padding:40px 20px;
+padding:60px 20px 30px;
 }
 
 h1{
@@ -48,12 +33,12 @@ font-size:42px;
 letter-spacing:2px;
 }
 
-p{
+header p{
 opacity:0.8;
 margin-top:5px;
 }
 
-/* GRID 2x2 FIJO */
+/* GRID 2x2 */
 .grid{
 display:grid;
 grid-template-columns: repeat(2,1fr);
@@ -66,34 +51,26 @@ padding:20px;
 /* TARJETAS */
 .card{
 background:rgba(255,255,255,0.08);
-backdrop-filter: blur(10px);
+backdrop-filter: blur(12px);
 border-radius:20px;
-padding:25px 15px;
 text-decoration:none;
 color:white;
+
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-height:190px;
-transition:0.3s;
 
-opacity:0;
-transform: translateY(30px);
-animation: fadeUp 0.8s ease-out forwards;
+height:210px;
+transition:0.3s;
 }
 
-.card:nth-child(1){ animation-delay:0.2s; }
-.card:nth-child(2){ animation-delay:0.4s; }
-.card:nth-child(3){ animation-delay:0.6s; }
-.card:nth-child(4){ animation-delay:0.8s; }
-
 .card img{
-width:90px;
-height:90px;
-object-fit:contain;
+width:110px;
+height:110px;
+object-fit:cover;
+border-radius:18px;
 margin-bottom:15px;
-border-radius:12px;
 }
 
 .card span{
@@ -110,20 +87,19 @@ background:rgba(255,255,255,0.15);
 .torneo{
 grid-column:span 2;
 background:linear-gradient(45deg,#ffb300,#ff6f00);
-height:70px;
+height:75px;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 font-size:22px;
-border-radius:15px;
+border-radius:18px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-box-shadow:0 0 20px rgba(255,140,0,0.8);
+box-shadow:0 0 20px rgba(255,140,0,0.7);
 transition:0.3s;
-
-opacity:0;
-animation: fadeUp 0.8s ease-out 1s forwards;
 }
 
 .torneo:hover{
@@ -138,8 +114,8 @@ opacity:0.7;
 font-size:14px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
@@ -147,33 +123,33 @@ font-size:14px;
 <p>Compite. Gana. Domina.</p>
 </header>
 
-<section class="grid">
+<div class="grid">
 
 <a href="#" class="card">
-  <img src="https://i.imgur.com/HgNCDOt.jpeg">
-  <span>Free Fire</span>
+<img src="https://i.imgur.com/HgNCDOt.jpeg">
+<span>Free Fire</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://i.imgur.com/cX94Wyh.jpeg">
-  <span>Mobile Legends</span>
+<img src="https://i.imgur.com/cX94Wyh.jpeg">
+<span>Mobile Legends</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://i.imgur.com/CjgcJpz.jpeg">
-  <span>Minecraft</span>
+<img src="https://i.imgur.com/CjgcJpz.jpeg">
+<span>Minecraft</span>
 </a>
 
 <a href="#" class="card">
-  <img src="https://i.imgur.com/WPBK0bi.jpeg">
-  <span>Blood Strike</span>
+<img src="https://i.imgur.com/WPBK0bi.jpeg">
+<span>Blood Strike</span>
 </a>
 
 <a href="#" class="torneo">
 🏆 Inscríbete a Torneos
 </a>
 
-</section>
+</div>
 
 <footer>
 © 2026 ChampionStore | Perú 🇵🇪
